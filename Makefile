@@ -44,3 +44,17 @@ deploy:
 
 mint:
 	@forge script script/Interactions.s.sol:MintBasicNft ${NETWORK_ARGS}
+
+deployMood:
+	@forge script script/DeployMoodNft.s.sol:DeployMoodNft $(NETWORK_ARGS)
+
+
+#finish this makefile script on my own minting the mood nft
+mintMood:
+		cast send 0x5FbDB2315678afecb367f032d93F642f64180aa3 "mintNft()"
+mintMoodNft:
+	@forge script script/Interactions.s.sol:MintMoodNft $(NETWORK_ARGS)
+
+#and this one too: flipping the moodNft
+flipMoodNft:
+	@forge script script/Interactions.s.sol:flipMoodNft $(NETWORK_ARGS)
